@@ -1,7 +1,8 @@
-import BlogPost from "@/components/blog/BlogPost";
+import BlogPost from "@/components/blog/BlogPost"; // Ruta corregida
 import TwoColumns from "@/components/inpage/TwoColumns/TwoColumns";
 import TextBlock from "@/components/inpage/SectionText/TextBlock";
 import HighlightPoints from "@/components/inpage/Highlights/Highlights";
+import Layout from "@/components/layout";
 
 export default function CoachingBariatricoPost() {
   const points = [
@@ -23,8 +24,10 @@ export default function CoachingBariatricoPost() {
   ];
 
   return (
-    <section className="max-w-container mx-auto px-4 py-8">
-      <BlogPost
+    <>
+    <Layout>
+    <section className="container mx-auto bg-white py-section px-6 md:px-12 lg:px-16">
+    <BlogPost
         title="Coaching para Bariátric@s"
         date="20 de enero de 2025"
         author="Blanca de Uña Martín"
@@ -68,5 +71,7 @@ export default function CoachingBariatricoPost() {
         }
       />
     </section>
+    </Layout>
+    <>
   );
 }

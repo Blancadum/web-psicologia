@@ -41,8 +41,6 @@ export default function FAQAccordion() {
   };
 
   return (
-    <section className="max-w-3xl mx-auto px-4 py-8 animate-fadeInUp">
-      <h1>Preguntas Frecuentes</h1>
 
       <div className="space-y-4">
         {faqs.map((faq, index) => (
@@ -61,7 +59,6 @@ export default function FAQAccordion() {
                 {openIndex === index ? "−" : "+"}
               </span>
             </button>
-
             {/* Contenido desplegable de la respuesta */}
             {openIndex === index && (
               <div className="px-4 pb-4 text-gray-600 transition-all duration-300">
@@ -71,6 +68,6 @@ export default function FAQAccordion() {
           </div>
         ))}
       </div>
-    </section>
+
   );
 }

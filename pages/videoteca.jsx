@@ -26,7 +26,7 @@ export default function VideosPage() {
           content="Descubre videos con consejos, estrategias y reflexiones para superar la ansiedad, la depresión y otros problemas emocionales. Aprende de forma práctica y visual con nuestros videos de psicología online."
         />
       </Head>
-      <Layout>
+
         <section className="container mx-auto bg-white py-section px-6 md:px-12 lg:px-16">
           <h1 className="text-h1 text-center mb-6">Videos</h1>
 
@@ -65,7 +65,7 @@ export default function VideosPage() {
             </div>
           )}
         </section>
-      </Layout>
+
     </>
   );
 }

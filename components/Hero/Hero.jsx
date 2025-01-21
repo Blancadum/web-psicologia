@@ -1,5 +1,5 @@
 // Componente para la sección inicial de las páginas (Hero).
-export default function HeroSection({ title, subtitle, buttonText, buttonLink, imageSrc }) {
+export default function Hero({ title, subtitle, buttonText, buttonLink, imageSrc }) {
     return (
       <section className="grid md:grid-cols-2 items-center py-20 px-4">
         {/* Columna de texto */}

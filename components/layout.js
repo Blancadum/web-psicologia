@@ -6,12 +6,10 @@ import Footer from "./footer/footer";
 export default function Layout({ children }) {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Importación de la fuente global */}
       <Head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;700&display=swap"
-          rel="stylesheet"
-        />
+        <title>Mi Sitio Web</title>
+        <meta name="description" content="Descripción de mi sitio web" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
       <main className="flex-grow">{children}</main>

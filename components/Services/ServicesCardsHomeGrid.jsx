@@ -5,7 +5,12 @@ import Link from "next/link";
 export default function ServicesCardsHomeGrid() {
   return (
     <section className="container mx-auto py-section px-6 md:px-12 lg:px-16 animate-fadeInUp">
+    <h2 className="text-h2">Nuestros Servicios</h2>
+        <p className="text-paragraph text-center mb-10">
+          Descubre cómo nuestros servicios pueden ayudarte a superar desafíos y alcanzar el bienestar emocional.
+        </p>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      
         <ServiceCard
           title="Terapia Individual"
           description="Sesiones online personalizadas para manejar ansiedad, depresión o duelos. Aprende herramientas únicas para gestionar tus emociones y recuperar el equilibrio emocional."

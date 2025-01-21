@@ -72,7 +72,7 @@ export default function Blog() {
       </Head>
 
       {/* Contenido del blog */}
-      <Layout>
+
       <section className="container mx-auto bg-white py-section px-6 md:px-12 lg:px-16">
           <h1 className="text-h1">Blog de Psicología y Bienestar</h1>
           <p className="text-paragraph text-center">
@@ -91,7 +91,7 @@ export default function Blog() {
             ))}
           </div>
         </section>
-      </Layout>
+
     </>
   );
 }

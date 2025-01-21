@@ -18,7 +18,6 @@ export default function ContactPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Formulario enviado:", formData);
-    // Lógica para enviar datos al servidor o procesar el formulario.
   };
 
   return (
@@ -66,12 +65,11 @@ export default function ContactPage() {
       </Head>
 
       {/* Contenido */}
-      <Layout>
-      <section className="container mx-auto bg-white py-section px-6 md:px-12 lg:px-16">
-        <h1 className="text-h1 text-center">¿Hablamos?</h1>
+
+        <section className="container mx-auto bg-white py-section px-6 md:px-12 lg:px-16">
+          <h1 className="text-h1 text-center">¿Hablamos?</h1>
           <p className="text-paragraph text-center mt-4">
-            Si tienes preguntas o necesitas ayuda, no dudes en ponerte en contacto. 
-            Estoy aquí para escucharte y trabajar juntos en tu bienestar.
+            Si tienes preguntas o necesitas ayuda, no dudes en ponerte en contacto. Estoy aquí para escucharte y trabajar juntos en tu bienestar.
           </p>
           <ContactForm
             formData={formData}
@@ -79,7 +77,6 @@ export default function ContactPage() {
             handleSubmit={handleSubmit}
           />
         </section>
-      </Layout>
-    </>
+      </>
   );
 }

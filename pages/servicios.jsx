@@ -1,4 +1,4 @@
-import Layout from "@/components/layout";
+import PageLayout from "@/components/inpage/PageLayout";
 import ServicesCardsGrid from "@/components/Services/ServicesCardsGrid";
 import ReservationButton from "@/components/CTA-Button/CtaBanner";
 import Head from "next/head";
@@ -8,25 +8,16 @@ export default function Servicios() {
     <>
       {/* Metadata */}
       <Head>
-        {/* Título */}
         <title>Servicios de Psicología Online - Blanca de Uña Martín</title>
-
-        {/* Descripción para SEO */}
         <meta
           name="description"
           content="Servicios de psicología online especializados en depresión, ansiedad, TCA, terapia familiar, problemas de pareja y más. Sesiones personalizadas con Blanca de Uña Martín."
         />
-
-        {/* Palabras clave */}
         <meta
           name="keywords"
           content="psicología online, terapia individual, terapia de pareja, coaching bariátrico, trastornos alimentarios, psicóloga Blanca de Uña Martín, terapia familiar, bienestar emocional"
         />
-
-        {/* Autor */}
         <meta name="author" content="Blanca de Uña Martín" />
-
-        {/* Open Graph para redes sociales */}
         <meta property="og:title" content="Servicios de Psicología Online - Blanca de Uña Martín" />
         <meta
           property="og:description"
@@ -38,8 +29,6 @@ export default function Servicios() {
           property="og:image"
           content="https://www.tu-sitio-web.com/images/servicios-psicologia.jpg"
         />
-
-        {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Servicios de Psicología Online - Blanca de Uña Martín" />
         <meta
@@ -50,22 +39,26 @@ export default function Servicios() {
           name="twitter:image"
           content="https://www.tu-sitio-web.com/images/servicios-psicologia.jpg"
         />
-
-        {/* Favicon */}
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       {/* Contenido principal */}
-      <Layout>
-      <section className="container mx-auto bg-white py-section px-6 md:px-12 lg:px-16">
-      <h1 className="text-h1 text-center">Servicios de Psicología Online</h1>
-      <ServicesCardsGrid/>
+      <PageLayout>
+        <section className="container mx-auto bg-white py-section px-6 md:px-12 lg:px-16">
+          <h1 className="text-h1 text-center mb-6">
+            Servicios de Psicología Online
+          </h1>
+          <p className="text-paragraph text-center mb-10">
+            Descubre los servicios que te ayudarán a alcanzar el bienestar emocional y superar los desafíos de la vida diaria.
+          </p>
+          <ServicesCardsGrid />
+
           {/* Botón de llamada a la acción */}
-          <div className="mt-8 text-center">
+          <div className="mt-12 text-center">
             <ReservationButton showTitle={false} />
           </div>
         </section>
-      </Layout>
+      </PageLayout>
     </>
   );
 }

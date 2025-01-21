@@ -32,24 +32,24 @@ export default function VideosPage() {
 
           {/* Dropdown para seleccionar videos */}
           <div className="mb-8 text-center">
-            <label htmlFor="video-select" className="text-paragraph mr-4">
-              Selecciona un video:
-            </label>
+            <label htmlFor="video-select" className="text-paragraph mr-4"> Selecciona un video: </label>
             <select
               id="video-select"
-              className="px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-brandPurple focus:ring-offset-2"
+              className="px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2
+                  focus:ring-brandPurple focus:ring-offset-2"
+              defaultValue="" // Establece el valor predeterminado aquí
               onChange={handleVideoSelect}
             >
-              <option value="" disabled selected>
-                -- Elige un video --
-              </option>
+            <option value="" disabled>
+              -- Elige un video --
+            </option>
               {videos.map((video) => (
                 <option key={video.id} value={video.id}>
                   {video.title}
                 </option>
               ))}
-            </select>
-          </div>
+              </select>
+            </div>
 
           {/* Mostrar video seleccionado */}
           {selectedVideo && (

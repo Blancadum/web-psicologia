@@ -1,0 +1,98 @@
+## Tailwind CSS Classes Documentation
+
+### Updated Classes for Compact Service Cards
+
+- **Container for Service Cards**: Used to create a responsive grid layout for the service cards.
+
+  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+
+- **Individual Service Card**: Applied to the wrapper of each service card.
+
+  <div className="p-4 border rounded-md shadow-md hover:shadow-lg transition duration-300">
+
+- **Title in Service Card (h3)**: Reduced font size, adjusted margin for compact spacing.
+
+  <h3 className="text-md md:text-lg font-semibold text-brandPurple mb-2">
+
+- **Paragraph Text in Service Card**: Slightly smaller and more compact for readability.
+ 
+  <p className="text-sm md:text-base text-gray-600 mb-4">
+
+
+- **Link in Service Card**: Styled as a call-to-action link with hover effects.
+
+  <a href="#" className="text-brandPurple hover:underline font-medium">
+  Leer más
+
+
+- **Grid Container for All Service Cards**: To control spacing and responsiveness.
+  <div className="container mx-auto py-section px-section">
+
+### Tailwind Configuration (`tailwind.config.js`)
+
+            /** @type {import('tailwindcss').Config} */
+            module.exports = {
+            content: [
+                "./pages/**/*.{js,jsx,ts,tsx}",
+                "./components/**/*.{js,jsx,ts,tsx}",
+            ],
+            theme: {
+                extend: {
+                colors: {
+                    brandPurple: "#5B21B6",
+                    brandPink: "#EC4899",
+                    background: "#ffffff",
+                    foreground: "#171717",
+                },
+                fontFamily: {
+                    sans: ["Lexend Deca", "Arial", "Helvetica", "sans-serif"],
+                },
+                fontSize: {
+                    h1: ["clamp(1.5rem, 2.3vw, 2.1rem)", { lineHeight: "1.2", fontWeight: "600" }],
+                    h2: ["clamp(1.3rem, 2vw, 1.9rem)", { lineHeight: "1.3", fontWeight: "500" }],
+                    h3: ["clamp(1.1rem, 1.8vw, 1.6rem)", { lineHeight: "1.4", fontWeight: "500" }],
+                    paragraph: [
+                    "clamp(0.9rem, 1.4vw, 1.05rem)",
+                    { lineHeight: "1.8", fontWeight: "400" },
+                    ],
+                },
+                spacing: {
+                    section: "48px", // Added breathing room
+                    sectionPadding: "20px",
+                    pagePadding: "18px",
+                },
+                maxWidth: {
+                    container: "96rem",
+                },
+                },
+            },
+            plugins: [
+                function ({ addBase }) {
+                addBase({
+                    h1: {
+                    textAlign: "center",
+                    fontSize: "clamp(1.5rem, 2.3vw, 2.1rem)",
+                    marginBottom: "1.8rem",
+                    },
+                    h2: {
+                    textAlign: "center",
+                    fontSize: "clamp(1.3rem, 2vw, 1.9rem)",
+                    marginBottom: "1.6rem",
+                    },
+                    h3: {
+                    textAlign: "left",
+                    fontSize: "clamp(1.1rem, 1.8vw, 1.6rem)",
+                    marginBottom: "1.4rem",
+                    },
+                    p: {
+                    fontSize: "clamp(0.9rem, 1.4vw, 1.05rem)",
+                    lineHeight: "1.8",
+                    marginBottom: "1.6rem",
+                    },
+                });
+                },
+            ],
+            };
+            ```
+

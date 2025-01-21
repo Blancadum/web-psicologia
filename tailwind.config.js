@@ -16,15 +16,18 @@ module.exports = {
         sans: ["Lexend Deca", "Arial", "Helvetica", "sans-serif"],
       },
       fontSize: {
-        h1: ["clamp(1.8rem, 3vw, 2.5rem)", { lineHeight: "1.2", fontWeight: "700" }],
-        h2: ["clamp(1.6rem, 2.8vw, 2.2rem)", { lineHeight: "1.3", fontWeight: "600" }],
-        h3: ["clamp(1.4rem, 2.5vw, 2rem)", { lineHeight: "1.4", fontWeight: "500" }],
-        paragraph: ["clamp(1rem, 1.8vw, 1.25rem)", { lineHeight: "1.8" }],
+        h1: ["clamp(1.5rem, 2.5vw, 2.2rem)", { lineHeight: "1.2", fontWeight: "600" }],
+        h2: ["clamp(1.4rem, 2.2vw, 2rem)", { lineHeight: "1.3", fontWeight: "500" }],
+        h3: ["clamp(1.2rem, 2vw, 1.8rem)", { lineHeight: "1.4", fontWeight: "500" }],
+        paragraph: [
+          "clamp(0.95rem, 1.5vw, 1.1rem)",
+          { lineHeight: "1.8", fontWeight: "400" },
+        ],
       },
       spacing: {
-        section: "40px",
-        sectionPadding: "16px",
-        pagePadding: "16px", // Ajuste base para todos los lados
+        section: "48px", // Más aire entre secciones
+        sectionPadding: "22px", // Más aire dentro de secciones
+        pagePadding: "20px", // General para todos los lados
       },
       maxWidth: {
         container: "96rem", // Pantallas grandes
@@ -35,12 +38,23 @@ module.exports = {
     function ({ addBase }) {
       addBase({
         h1: {
-          textAlign: "center", // Centramos los encabezados por defecto
-          fontSize: "clamp(1.8rem, 3vw, 2.5rem)",
+          textAlign: "center", // Centramos encabezados
+          fontSize: "clamp(1.6rem, 2.5vw, 2.2rem)",
+          marginBottom: "2rem",        },
+        h2: {
+          textAlign: "center",
+          fontSize: "clamp(1.4rem, 2.2vw, 2rem)",
+          marginBottom: "2rem",
+        },
+        h3: {
+          textAlign: "left",
+          fontSize: "clamp(1.2rem, 2vw, 1.8rem)",
+          marginBottom: "2rem",
         },
         p: {
-          fontSize: "clamp(1rem, 1.8vw, 1.25rem)",
+          fontSize: "clamp(0.95rem, 1.5vw, 1.1rem)", // Reducimos tamaño
           lineHeight: "1.8",
+          marginBottom: "2rem", // Más espacio entre párrafos
         },
       });
     },

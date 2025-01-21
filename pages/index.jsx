@@ -3,7 +3,7 @@ import Head from "next/head";
 import Layout from "@/components/layout";
 import HeroSection from "../components/HeroSection/HeroSection";
 import ReservationButton from "@/components/CTA-Button/CtaBanner";
-import ServicesCardsHome from "@/components/Services/ServicesCardsHome";
+import ServicesCardsHomeGrid from "@/components/Services/ServicesCardsHomeGrid";
 import FAQAccordion from "@/components/faq/faq";
 
 export default function Home() {
@@ -27,7 +27,7 @@ export default function Home() {
 
           {/* Servicios Destacados */}
           <h2 className="text-h2">Servicios Destacados</h2>
-          <ServicesCardsHome />
+          <ServicesCardsHomeGrid />
 
           {/* Sección de CTA adicional */}
           <ReservationButton title={false} />

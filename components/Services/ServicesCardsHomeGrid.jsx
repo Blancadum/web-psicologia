@@ -2,7 +2,7 @@
 import ServiceCard from "./ServiceCard";
 import Link from "next/link";
 
-export default function ServicesCardsHome() {
+export default function ServicesCardsHomeGrid() {
   return (
     <section className="container mx-auto py-section px-6 md:px-12 lg:px-16 animate-fadeInUp">
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

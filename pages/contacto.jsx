@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Head from "next/head";
-import Layout from "@/components/layout";
 import ContactForm from "@/components/Formularios/Contacto";
 
 export default function ContactPage() {
@@ -63,11 +62,9 @@ export default function ContactPage() {
         {/* Favicon */}
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       {/* Contenido */}
-
         <section className="container mx-auto bg-white py-section px-6 md:px-12 lg:px-16">
-          <h1 className="text-h1 text-center">¿Hablamos?</h1>
+        <h1 className="text-h1 text-center">¿Hablamos?</h1>
           <p className="text-paragraph text-center mt-4">
             Si tienes preguntas o necesitas ayuda, no dudes en ponerte en contacto. Estoy aquí para escucharte y trabajar juntos en tu bienestar.
           </p>

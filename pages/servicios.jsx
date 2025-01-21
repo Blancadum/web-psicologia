@@ -44,20 +44,14 @@ export default function Servicios() {
 
       {/* Contenido principal */}
       <PageLayout>
-        <section className="container mx-auto bg-white py-section px-6 md:px-12 lg:px-16">
-          <h1 className="text-h1 text-center mb-6">
-            Servicios de Psicología Online
-          </h1>
-          <p className="text-paragraph text-center mb-10">
-            Descubre los servicios que te ayudarán a alcanzar el bienestar emocional y superar los desafíos de la vida diaria.
-          </p>
+
           <ServicesCardsGrid />
 
           {/* Botón de llamada a la acción */}
           <div className="mt-12 text-center">
             <ReservationButton showTitle={false} />
           </div>
-        </section>
+
       </PageLayout>
     </>
   );

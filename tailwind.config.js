@@ -9,10 +9,10 @@ module.exports = {
       colors: {
         brandPurple: "#5B21B6",
         brandPink: "#EC4899",
-        background: "#ffffff", // Fondo claro
-        foreground: "#171717", // Texto oscuro
-        darkBackground: "#0a0a0a", // Fondo oscuro
-        darkForeground: "#ededed", // Texto claro
+        background: "#ffffff",
+        foreground: "#171717",
+        darkBackground: "#0a0a0a",
+        darkForeground: "#ededed",
       },
       fontFamily: {
         sans: ["Lexend Deca", "Arial", "Helvetica", "sans-serif"],
@@ -27,17 +27,17 @@ module.exports = {
         ],
       },
       spacing: {
-        section: "48px", // Espaciado vertical entre secciones
-        pagePadding: "18px", // Padding global
-        cardPadding: "16px", // Compactación de tarjetas
+        section: "32px",
+        pagePadding: "16px",
+        cardPadding: "16px",
       },
       maxWidth: {
-        container: "96rem", // Ancho máximo para contenedores grandes
+        container: "96rem",
       },
     },
   },
   plugins: [
-    function ({ addBase, addComponents, theme }) {
+    function ({ addBase, addComponents, addUtilities, theme }) {
       addBase({
         ":root": {
           "--background": theme("colors.background"),
@@ -58,39 +58,22 @@ module.exports = {
           "@apply text-h1 mb-4 text-gray-900 text-center": "",
         },
         h2: {
-          "@apply text-h2 font-bold mb-6 text-gray-900 text-center": "", // Más bold y con margen inferior
+          "@apply text-h2 font-bold mb-6 text-gray-900 text-center": "",
         },
         h3: {
           "@apply text-h3 mb-4 text-gray-700": "",
         },
+        "h1, h2, h3": {
+          "@apply mt-4": "",
+        },
         a: {
           cursor: "pointer",
-        },
-        nav: {
-          transition: "transform 0.3s ease-in-out",
-        },
-        header: {
-          boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
-        },
-        "nav ul li": {
-          marginBottom: "1rem",
-        },
-        "@screen md": {
-          "nav ul li": {
-            marginBottom: "0",
-          },
         },
       });
 
       addComponents({
         ".section": {
-          "@apply container mx-auto py-section px-6 md:px-8 lg:px-12": "",
-        },
-        ".h1-text": {
-          "@apply text-h1 mb-4 text-gray-900 text-center": "",
-        },
-        ".h2-text": {
-          "@apply text-h2 font-bold mb-6 text-gray-900 text-center": "", // Aplicamos más bold aquí
+          "@apply container mx-auto px-6 md:px-8 lg:px-12": "",
         },
         ".faq-title": {
           "@apply text-2xl font-bold text-gray-900 mb-2": "",
@@ -117,15 +100,23 @@ module.exports = {
           "@apply w-full max-w-md sm:max-w-lg lg:max-w-xl h-auto rounded-lg shadow-lg": "",
         },
         ".page-layout": {
-          "@apply space-y-12 px-6 md:px-12 lg:px-16": "",
-        },
-        "h1, h2, h3": {
-          "@apply mt-10": "",
+          "@apply space-y-4 px-pagePadding": "",
         },
         "p.text-paragraph": {
           "@apply mt-6": "",
         },
       });
+
+      addUtilities(
+        {
+          ".space-y-4": {
+            "& > * + *": {
+              marginTop: theme("spacing.4"),
+            },
+          },
+        },
+        { variants: ["responsive"] }
+      );
     },
   ],
 };

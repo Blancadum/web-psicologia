@@ -1,8 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./pages/**/*.{js,jsx,ts,tsx}",
+    "./src/client/**/*.{js,jsx,ts,tsx}", 
     "./components/**/*.{js,jsx,ts,tsx}",
+    "./public/index.html",
   ],
   theme: {
     extend: {
@@ -18,7 +19,7 @@ module.exports = {
         sans: ["Lexend Deca", "Arial", "Helvetica", "sans-serif"],
       },
       fontSize: {
-        h1: ["clamp(1.4rem, 2.3vw, 2rem)", { lineHeight: "1.2", fontWeight: "600" }],
+        h1: ["text-2xl md:text-3xl", { fontWeight: "700" }],
         h2: ["clamp(1.3rem, 2vw, 1.8rem)", { lineHeight: "1.3", fontWeight: "500" }],
         h3: ["clamp(1.1rem, 1.8vw, 1.6rem)", { lineHeight: "1.4", fontWeight: "500" }],
         paragraph: [
@@ -55,7 +56,7 @@ module.exports = {
           fontFamily: theme("fontFamily.sans"),
         },
         h1: {
-          "@apply text-h1 mb-4 text-gray-900 text-center": "",
+          "@apply text-2xl md:text-3xl font-bold text-center text-brandPurple mb-4": "",
         },
         h2: {
           "@apply text-h2 font-bold mb-6 text-gray-900 text-center": "",
@@ -97,7 +98,7 @@ module.exports = {
           "@apply text-paragraph mb-8 mt-6": "",
         },
         ".hero-image": {
-          "@apply w-full max-w-md sm:max-w-lg lg:max-w-xl h-auto rounded-lg shadow-lg": "",
+          "@apply w-full max-w-md sm:max-w-lg lg:max-w-xl h-auto": "",
         },
         ".page-layout": {
           "@apply space-y-4 px-pagePadding": "",
@@ -109,6 +110,11 @@ module.exports = {
 
       addUtilities(
         {
+          ".text-gradient": {
+            background: "linear-gradient(to right, #EC4899, #5B21B6)", // Cambia a tus colores preferidos
+            "-webkit-background-clip": "text",
+            "-webkit-text-fill-color": "transparent",
+          },
           ".space-y-4": {
             "& > * + *": {
               marginTop: theme("spacing.4"),

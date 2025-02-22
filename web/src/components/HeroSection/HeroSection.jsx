@@ -1,5 +1,5 @@
 import React from "react";
-import image from "@images/terapia-online.png";
+import terapiaOnline from "../../assets/images/terapiaOnline.png"; // Ajusta según la ubicación de tu archivo
 
 export default function HeroSection() {
   return (
@@ -19,7 +19,7 @@ export default function HeroSection() {
         {/* Imagen destacada */}
         <div className="flex justify-center">
           <img
-            src={image}
+            src={ terapiaOnline }
             alt="Representación gráfica de terapia online, mostrando conexión global"
             className="w-full max-w-md sm:max-w-lg lg:max-w-xl h-auto"
           />

@@ -1,8 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/client/**/*.{js,jsx,ts,tsx}", 
-    "./components/**/*.{js,jsx,ts,tsx}",
+    "./src/**/*.{js,jsx,ts,tsx}", // Se corrigió la ruta de contenido
     "./public/index.html",
   ],
   theme: {
@@ -111,7 +110,7 @@ module.exports = {
       addUtilities(
         {
           ".text-gradient": {
-            background: "linear-gradient(to right, #EC4899, #5B21B6)", // Cambia a tus colores preferidos
+            background: "linear-gradient(to right, #EC4899, #5B21B6)",
             "-webkit-background-clip": "text",
             "-webkit-text-fill-color": "transparent",
           },

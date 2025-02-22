@@ -1,11 +1,7 @@
 import React from "react";
-import BlogPost from "../../pages/blog"
-/*import TwoColumns from "../../components/inpage/TwoColumns/TwoColumns";
-import TextBlock from "../../components/inpage/SectionText/TextBlock";
-import HighlightPoints from "../../components/inpage/Highlights/Highlights";
-*/
+import BlogPost from "../../pages/blog";
 
-export default function TerapiaFamiliarPost() {
+export default function TerapiaFamiliarService() {
   return (
     <BlogPost
       title="Terapia Familiar: Fortaleciendo los Lazos y la Comunicación"

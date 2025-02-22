@@ -1,0 +1,7 @@
+{
+  "ignore": ["node_modules", "public", ".git"],
+  "env": {
+    "PORT": "4000"
+    
+  }
+}

@@ -9,11 +9,12 @@ module.exports = {
   },
   mode: "development",
   devServer: {
-    static: path.resolve(__dirname, "dist"),
-    port: 3000,
-    hot: true,
-    open: true,
-  },
+  static: path.resolve(__dirname, "dist"),
+  port: 3000,
+  hot: true,
+  open: true,
+  historyApiFallback: true, // Permite manejar rutas con React Router
+},
   module: {
     rules: [
       {

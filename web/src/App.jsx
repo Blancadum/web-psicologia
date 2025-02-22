@@ -9,7 +9,8 @@ import PricingPage from "./pages/tarifas";
 import SobreMi from "./pages/sobre-mi";
 import VideosPage from "./pages/videoteca";
 import TerapiaFamiliarService from "./pages/servicios/terapia-familiar";
-
+import RegisterPage  from "./pages/registro";
+import LoginPage from "./pages/login";
 export default function App() {
   return (
     <Router>
@@ -23,6 +24,8 @@ export default function App() {
           <Route path="/contacto" element={<ContactPage />} />
           <Route path="/servicios" element={<Servicios />} />
           <Route path="pages/servicios/terapia-familiar" element={<TerapiaFamiliarService />} />
+          <Route path="/registro" element={<RegisterPage/>} />
+          <Route path="/login" element={<LoginPage />} />
         </Routes>
       </Layout>
     </Router>

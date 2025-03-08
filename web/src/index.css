@@ -1,7 +1,7 @@
 /* styles/custom.css */
-@tailwind base;
-@tailwind components;
+@import "tailwindcss/preflight";
 @tailwind utilities;
+
 /* Botón con gradiente personalizado */
 .btn-gradient {
     background: linear-gradient(90deg, #5B21B6 0%, #EC4899 100%);

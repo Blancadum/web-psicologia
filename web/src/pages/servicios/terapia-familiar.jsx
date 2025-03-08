@@ -1,5 +1,5 @@
 import React from "react";
-import BlogPost from "../../pages/blog";
+import BlogPost from "../Blog";
 
 export default function TerapiaFamiliarService() {
   return (

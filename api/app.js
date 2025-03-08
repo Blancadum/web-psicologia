@@ -1,28 +1,25 @@
+require("dotenv").config();
 const express = require("express");
-const mongoose = require("mongoose");
 const logger = require("morgan");
+const cors = require("./middlewares/cors.middleware");
+
+/* DB init */
+require("./config/db.config");
 
 const app = express();
 
-// DB init: conectar a la base de datos
-require("./config/db.config");
+/* Middlewares */
+app.use(express.json());
+app.use(logger("dev"));
+app.use(cors);
 
-// Middlewares
-app.use(express.json()); // Permite leer JSON en 'req.body'
-app.use(logger("dev")); //Logs de peticiones en la terminal
-app.use(cors()); // Permite peticiones desde otros dominios, como desde el frontend -react-
+/* API Routes Configuration */
+const routes = require("./config/routes.config");
+app.use("/api/v1/", routes);
 
-// Configuración de las rutas
-const routes = require("./routes/routes.config");
-app.use("/", routes);
+const port = Number(process.env.PORT || 5000);
 
+app.listen(port, () => console.info(`Application running at port ${port} 🚀`));
 
-//Middleware para manejar rutas no encontradas
-app.use((error, req, res, next) => {
-    console.error(error);
-    res.status(error.status || 500).json({message: error.message || "Error interno del Servidor"});
-});
-
-//iniciar el servidor
-const port = Number(process.env.PORT || 4000);
-app.listen(port, () => console.info(`Application running at port ${port}`));
+const cookieParser = require("cookie-parser");
+app.use(cookieParser());

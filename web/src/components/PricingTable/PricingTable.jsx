@@ -6,21 +6,21 @@ export default function PricingTable() {
   const plans = [
     {
       title: "1 Sesión",
-      price: "$50",
+      price: "€50",
       description: "Ideal para problemas específicos.",
       isHighlighted: false,
     },
     {
       title: "Pack 3 Sesiones",
-      price: "$135",
+      price: "135€",
       description: "Ahorro de $15 en sesiones consecutivas.",
       isHighlighted: false,
     },
     {
       title: "Pack 5 Sesiones",
-      price: "$200",
+      price: "€200",
       description: "Máximo ahorro para un tratamiento continuo.",
-      isHighlighted: true, // Destacar este plan
+      isHighlighted: true, 
     },
   ];
 

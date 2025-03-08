@@ -1,6 +1,5 @@
-import React, { useState } from "react";
-import { Helmet } from "react-helmet"; // Reemplaza next/head
 import PageLayout from "../components/inpage/PageLayout"; // Ajuste de ruta
+import { useState } from "react";
 
 export default function VideosPage() {
   const videos = [
@@ -20,7 +19,6 @@ export default function VideosPage() {
   return (
     <PageLayout>
       {/* Metadata para la página */}
-      <Helmet>
         <title>Videos de Apoyo y Consejos | Psicología Online</title>
         <meta
           name="description"
@@ -53,7 +51,6 @@ export default function VideosPage() {
           content="https://www.tu-sitio-web.com/images/videos-psicologia.jpg"
         />
         <link rel="icon" href="/favicon.ico" />
-      </Helmet>
 
       {/* Contenido principal */}
       <section className="container mx-auto bg-white py-section px-6 md:px-12 lg:px-16">

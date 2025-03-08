@@ -1,6 +1,63 @@
-import React from "react";
+import React, { useState } from "react";
 
-const RegisterForm = ({ formData, handleChange, handleSubmit, handleFileChange, error, loading }) => {
+const RegisterForm = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    surname: "",
+    phone: "",
+    dni: "",
+    birthdate: "",
+    email: "",
+    password: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  // Manejar cambios en los inputs
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  // Manejar el envío del formulario
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError("");
+
+    try {
+      // Enviar los datos al backend
+      const response = await fetch("http://localhost:4000/api/register", {  // Asegúrate de que la URL sea la correcta
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        alert("Registro exitoso");
+        setFormData({
+          name: "",
+          surname: "",
+          phone: "",
+          dni: "",
+          birthdate: "",
+          email: "",
+          password: "",
+        });
+      } else {
+        setError(data.message || "Hubo un error con el registro.");
+      }
+    } catch (error) {
+      setError("Error de conexión con el servidor");
+    }
+
+    setLoading(false);
+  };
+
   return (
     <div className="section">
       <div className="max-w-lg mx-auto border border-gray-300 rounded-lg p-6 bg-white shadow-lg">
@@ -76,19 +133,6 @@ const RegisterForm = ({ formData, handleChange, handleSubmit, handleFileChange, 
               value={formData.birthdate}
               onChange={handleChange}
               required
-              className="w-full border border-gray-300 rounded-md px-4 py-2"
-            />
-          </div>
-
-          {/* Campo: Foto de perfil */}
-          <div>
-            <label htmlFor="profilePicture" className="block text-gray-600 mb-2">Foto de perfil</label>
-            <input
-              id="profilePicture"
-              type="file"
-              name="profilePicture"
-              onChange={handleFileChange}
-              accept="image/*"
               className="w-full border border-gray-300 rounded-md px-4 py-2"
             />
           </div>

@@ -1,5 +1,4 @@
 import React from "react";
-import { Helmet } from "react-helmet";
 import PostCard from "../components/blog/PostCard"; // Ajustar ruta si es necesario
 export default function Blog() {
   // Ejemplo de datos de posts (podrían venir de una API real)
@@ -22,7 +21,6 @@ export default function Blog() {
   return (
 <>
       {/* Metadata */}
-      <Helmet>
         {/* Título */}
         <title>Blog de Psicología y Bienestar - Blanca de Uña Martín</title>
 
@@ -68,7 +66,6 @@ export default function Blog() {
 
         {/* Favicon */}
         <link rel="icon" href="/favicon.ico" />
-      </Helmet>
 
       {/* Contenido del blog */}
       <section className="container mx-auto bg-white py-section px-6 md:px-12 lg:px-16">

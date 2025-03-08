@@ -1,5 +1,4 @@
 import React from "react";
-import { Helmet } from "react-helmet"; // Para SEO
 import PricingTable from "../components/PricingTable/PricingTable"; // Ajuste de ruta
 import PageLayout from "../components/inpage/PageLayout"; // Ajuste de ruta
 
@@ -7,7 +6,6 @@ export default function PricingPage() {
   return (
     <PageLayout>
       {/* Metadata para la página */}
-      <Helmet>
         <title>Tarifas de Psicología Online - Blanca de Uña Martín</title>
         <meta
           name="description"
@@ -40,7 +38,6 @@ export default function PricingPage() {
           content="https://www.tu-sitio-web.com/images/tarifas-psicologia.jpg"
         />
         <link rel="icon" href="/favicon.ico" />
-      </Helmet>
 
       {/* Contenido principal */}
       <section className="container mx-auto bg-white py-section px-6 md:px-12 lg:px-16">

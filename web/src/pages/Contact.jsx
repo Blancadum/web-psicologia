@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Helmet } from "react-helmet";
 import ContactForm from "../components/Formularios/Contacto"; // Ruta ajustada para tu estructura
 
 export default function ContactPage() {
@@ -22,7 +21,6 @@ export default function ContactPage() {
   return (
     <>
       {/* Metadata SEO */}
-      <Helmet>
         <title>Contáctanos - Blanca de Uña Martín</title>
         <meta
           name="description"
@@ -61,7 +59,6 @@ export default function ContactPage() {
 
         {/* Favicon */}
         <link rel="icon" href="/favicon.ico" />
-      </Helmet>
 
       {/* Contenido */}
       <section className="container mx-auto bg-white py-section px-6 md:px-12 lg:px-16">

@@ -1,6 +1,5 @@
 // src/client/components/Layout.js
 import React from "react";
-import { Helmet } from "react-helmet";
 import Header from "./header/Header";
 import Footer from "./footer/Footer";
 
@@ -13,7 +12,6 @@ export default function Layout({
 }) {
   return (
     <div className="flex flex-col min-h-screen">
-      <Helmet>
         {/* Título y descripción */}
         <title>{title}</title>
         <meta name="description" content={description} />
@@ -36,7 +34,6 @@ export default function Layout({
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Web Psicología" />
         <meta name="keywords" content="terapia online, bienestar emocional, salud mental, ansiedad, depresión, psicólogos online" />
-      </Helmet>
       <Header />
       <main className="flex-grow">{children}</main>
       <Footer />

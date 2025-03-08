@@ -1,9 +1,5 @@
 import React, { useState } from "react";
-import RegisterForm from "../components/Formularios/registerForm"; // Asegúrate de que el componente esté correctamente importado
-import { auth, db, storage } from"../../firebase.config"; // Si necesitas Firebase Database o Storage
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { setDoc, doc } from "firebase/firestore";
-import { ref, uploadBytes } from "firebase/storage"; // Para cargar la foto de perfil
+import RegisterForm from "../components/Formularios/registerForm"; 
 
 export default function RegisterPage() {
   const [formData, setFormData] = useState({
@@ -41,35 +37,27 @@ export default function RegisterPage() {
   // Manejo del envío del formulario
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const { email, password, name, surname, phone, dni, birthdate, profilePicture } = formData;
-
     setLoading(true);
     setError("");
 
     try {
-      // Crear el usuario con email y contraseña en Firebase Authentication
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-
-      // Subir la foto de perfil si se ha seleccionado una
-      let photoUrl = "";
-      if (profilePicture) {
-        const profilePicRef = ref(storage, `profilePictures/${userCredential.user.uid}`);
-        await uploadBytes(profilePicRef, profilePicture);
-        photoUrl = `profilePictures/${userCredential.user.uid}`;
-      }
-
-      // Guardar los datos del usuario en Firebase Firestore
-      await setDoc(doc(db, "users", userCredential.user.uid), {
-        name: `${name} ${surname}`,
-        email,
-        phone,
-        dni,
-        birthdate,
-        profilePicture: photoUrl,
+      const formDataToSend = new FormData();
+      Object.keys(formData).forEach((key) => {
+        formDataToSend.append(key, formData[key]);
       });
 
-      // Limpiar el formulario
+      const response = await fetch("http://localhost:5000/api/register", {
+        method: "POST",
+        body: formDataToSend,
+      });
+
+      if (!response.ok) {
+        throw new Error("Error al registrar usuario");
+      }
+
+      console.log("Usuario registrado exitosamente.");
+
+      // Limpiar el formulario después del registro
       setFormData({
         name: "",
         surname: "",
@@ -81,7 +69,6 @@ export default function RegisterPage() {
         profilePicture: null,
       });
 
-      console.log("Usuario registrado exitosamente.");
     } catch (error) {
       setError(error.message);
       console.error("Error al registrar usuario: ", error.message);
@@ -93,10 +80,10 @@ export default function RegisterPage() {
   return (
     <div className="flex justify-center items-center min-h-screen">
       <RegisterForm
-        formData={formData} 
-        handleChange={handleChange} 
-        handleSubmit={handleSubmit} 
-        handleFileChange={handleFileChange}  // Asegúrate de pasar la función para manejar archivos
+        formData={formData}
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+        handleFileChange={handleFileChange}
         error={error}
         loading={loading}
       />
